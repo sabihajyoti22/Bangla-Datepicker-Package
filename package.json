@@ -2,9 +2,15 @@
   "name": "js-bangla-calendar",
   "version": "1.0.0",
   "description": "Bangla Calendar using HTML, CSS and Vanila JS",
-  "main": "index.html",
+  "main": "script.js",
+  "type": "module",
+  "module": "dist/script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "minify-html": "html-minifier-terser src/index.html --collapse-whitespace --output=dist/index.html",
+    "optimize-css": "postcss src/style.css --use autoprefixer cssnano postcss-pxtorem --output dist/style.css",
+    "transpile-js": "babel src/script.js -o dist/script.js --presets=@babel/preset-env",
+    "minify-js": "uglifyjs dist/script.js --compress -o dist/script.js",
+    "build": "mkdir dist && npm run minify-html && npm run optimize-css && npm run transpile-js && npm run minify-js"
   },
   "keywords": [
     "Bangla",
@@ -14,5 +20,17 @@
     "JS-Calendar"
   ],
   "author": "sabihajyoti22",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.1",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-pxtorem": "^6.1.0",
+    "uglify-js": "^3.17.4"
+  }
 }
