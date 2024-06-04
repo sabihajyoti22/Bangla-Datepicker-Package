@@ -1,0 +1,18 @@
+{
+  "name": "js-bangla-calendar",
+  "version": "1.0.0",
+  "description": "Bangla Calendar using HTML, CSS and Vanila JS",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Bangla",
+    "Bangla",
+    "Calendar",
+    "Calendar",
+    "JS-Calendar"
+  ],
+  "author": "sabihajyoti22",
+  "license": "ISC"
+}
