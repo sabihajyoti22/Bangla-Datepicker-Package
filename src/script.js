@@ -1,17 +1,17 @@
-const addElement = () => {
+const createCalendar = () => {
     const container = document.getElementById("container")
     container.innerHTML = `
     <input readonly id="calendar-input" type="text" placeholder="তারিখ সিলেক্ট করুণ">
-    <img id="calendar-icon" src="../assets/icons/calendar.svg" alt="calendar icon">
+    <img id="calendar-icon" src="./icons/calendar.svg" alt="calendar icon">
 
     <div id="calendar-card">
         <div id="card-header">
-            <img id="left-arrow" src="../assets/icons/leftArrow.svg" alt="left arrow">
+            <img id="left-arrow" src="./icons/leftArrow.svg" alt="left arrow">
             <div>
                 <div id="month"></div>
                 <div id="year"></div>
             </div>
-            <img id="right-arrow" src="../assets/icons/rightArrow.svg" alt="right arrow">
+            <img id="right-arrow" src="./icons/rightArrow.svg" alt="right arrow">
         </div>
 
         <div id="weeks">
@@ -83,7 +83,7 @@ const addElement = () => {
     let curentMonth = new Date().getMonth()
     let curentYear = new Date().getFullYear()
 
-    const convertNumber = (num) => {
+    const convertToBangla = (num) => {
         const bangNum = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯']
         var converted = ''
 
@@ -112,14 +112,15 @@ const addElement = () => {
     }
 
     const selectedDate = (evt) => {
-        calendarInput.innerText = curentYear + '-' + curentMonth + '-' + evt.target.value
-        calendarInput.value = evt.target.innerHTML + '/' + convertNumber(curentMonth) + '/' + convertNumber(curentYear)
+        calendarInput.value = evt.target.innerHTML + '/' + convertToBangla(curentMonth) + '/' + convertToBangla(curentYear)
         calendarCard.style.display = 'none'
+
+        return curentYear + '-' + curentMonth + '-' + evt.target.value
     }
 
     const setCalender = () => {
         month.innerHTML = monthArr[curentMonth]
-        year.innerHTML = convertNumber(curentYear)
+        year.innerHTML = convertToBangla(curentYear)
 
         const nodes = days.children
         let space = 0
@@ -132,7 +133,7 @@ const addElement = () => {
                 nodes[el].innerHTML = ''
                 space++
             } else if (date < dates) {
-                nodes[el].innerHTML = convertNumber(date + 1)
+                nodes[el].innerHTML = convertToBangla(date + 1)
                 nodes[el].value = date + 1
                 nodes[el].addEventListener("click", (evt) => selectedDate(evt))
                 date++
@@ -172,8 +173,5 @@ const addElement = () => {
     //     calendarCard.style.display = 'none'
     // })
 }
-const createCalendar = () => {
-    document.body.onload = addElement;
-}
 
-export default createCalendar
+export { createCalendar }

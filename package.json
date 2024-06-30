@@ -6,11 +6,12 @@
   "type": "module",
   "module": "dist/script.js",
   "scripts": {
+    "dist": "if [ -d 'dist' ] \n then \n rm -rf dist \n else \n mkdir dist \n fi",
     "minify-html": "html-minifier-terser src/index.html --collapse-whitespace --output=dist/index.html",
     "optimize-css": "postcss src/style.css --use autoprefixer cssnano postcss-pxtorem --output dist/style.css",
     "transpile-js": "babel src/script.js -o dist/script.js --presets=@babel/preset-env",
-    "minify-js": "uglifyjs dist/script.js --compress -o dist/script.js",
-    "build": "mkdir dist && npm run minify-html && npm run optimize-css && npm run transpile-js && npm run minify-js"
+    "minify-js": "uglifyjs src/script.js --compress -o dist/script.js",
+    "build": "npm run dist && cp -R assets dist && npm run minify-html && npm run optimize-css && npm run minify-js"
   },
   "keywords": [
     "Bangla",
