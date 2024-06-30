@@ -2,16 +2,16 @@ const createCalendar = () => {
     const container = document.getElementById("container")
     container.innerHTML = `
     <input readonly id="calendar-input" type="text" placeholder="তারিখ সিলেক্ট করুণ">
-    <img id="calendar-icon" src="./icons/calendar.svg" alt="calendar icon">
+    <img id="calendar-icon" src="../assets/icons/calendar.svg" alt="calendar icon">
 
     <div id="calendar-card">
         <div id="card-header">
-            <img id="left-arrow" src="./icons/leftArrow.svg" alt="left arrow">
+            <img id="left-arrow" src="../assets/icons/leftArrow.svg" alt="left arrow">
             <div>
                 <div id="month"></div>
                 <div id="year"></div>
             </div>
-            <img id="right-arrow" src="./icons/rightArrow.svg" alt="right arrow">
+            <img id="right-arrow" src="../assets/icons/rightArrow.svg" alt="right arrow">
         </div>
 
         <div id="weeks">
@@ -114,7 +114,6 @@ const createCalendar = () => {
     const selectedDate = (evt) => {
         calendarInput.value = evt.target.innerHTML + '/' + convertToBangla(curentMonth) + '/' + convertToBangla(curentYear)
         calendarCard.style.display = 'none'
-
         return curentYear + '-' + curentMonth + '-' + evt.target.value
     }
 
@@ -174,4 +173,4 @@ const createCalendar = () => {
     // })
 }
 
-export { createCalendar }
+export default createCalendar
