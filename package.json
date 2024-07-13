@@ -1,7 +1,7 @@
 {
   "name": "js-bangla-datepicker",
   "version": "0.0.1",
-  "description": "Bangla Calendar using HTML, CSS and Vanila JS",
+  "description": "Bangla Datepicker using HTML, CSS and Vanila JS",
   "main": "script.js",
   "type": "module",
   "module": "dist/script.js",
@@ -19,10 +19,9 @@
   },
   "keywords": [
     "Bangla",
-    "Bangla",
     "Calendar",
-    "Calendar",
-    "JS-Calendar"
+    "Datepicker",
+    "JS-Datepicker"
   ],
   "author": "sabihajyoti22",
   "license": "ISC",
