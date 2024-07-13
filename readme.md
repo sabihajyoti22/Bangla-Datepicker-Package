@@ -1,6 +1,6 @@
 ### To Test Locally
 ```
-npm link js-bangla-calendar
+npm link js-bangla-datepicker
 ```
 
 ### Usage
