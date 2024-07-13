@@ -1,17 +1,21 @@
 {
-  "name": "js-bangla-calendar",
-  "version": "1.0.0",
+  "name": "js-bangla-datepicker",
+  "version": "0.0.1",
   "description": "Bangla Calendar using HTML, CSS and Vanila JS",
   "main": "script.js",
   "type": "module",
   "module": "dist/script.js",
   "scripts": {
     "dist": "if [ -d 'dist' ] \n then \n rm -rf dist \n else \n mkdir dist \n fi",
+    "files": "cd dist && mkdir assets && cd assets && mkdir fonts && mkdir icons",
+    "fonts": "cp -v src/assets/fonts/*.ttf dist/assets/fonts",
+    "icons": "cp -v src/assets/icons/*.svg dist/assets/icons",
+    "assets": "npm run files && npm run fonts && npm run icons",
     "minify-html": "html-minifier-terser src/index.html --collapse-whitespace --output=dist/index.html",
     "optimize-css": "postcss src/style.css --use autoprefixer cssnano postcss-pxtorem --output dist/style.css",
     "transpile-js": "babel src/script.js -o dist/script.js --presets=@babel/preset-env",
     "minify-js": "uglifyjs src/script.js --compress -o dist/script.js",
-    "build": "npm run dist && cp -R assets dist && npm run minify-html && npm run optimize-css && npm run minify-js"
+    "build": "npm run dist && cp -R assets && npm run assets && npm run minify-html && npm run optimize-css && npm run minify-js"
   },
   "keywords": [
     "Bangla",

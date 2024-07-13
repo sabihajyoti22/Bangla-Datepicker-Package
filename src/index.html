@@ -12,8 +12,11 @@
 <body>
     <div id="container"></div>
     <script type="module">
-        import calendarContainer from "./script.js"
-        calendarContainer()
+        import { jsBanglaDatepicker } from "./script.js"
+        jsBanglaDatepicker.createCalendar()
+        jsBanglaDatepicker.container.addEventListener('getDate', (evt) => {
+            console.log(evt.detail)
+        })
     </script>
 </body>
 
