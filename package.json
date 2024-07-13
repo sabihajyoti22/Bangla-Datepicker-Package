@@ -1,6 +1,6 @@
 {
   "name": "js-bangla-datepicker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bangla Datepicker using HTML, CSS and Vanila JS",
   "main": "script.js",
   "type": "module",
