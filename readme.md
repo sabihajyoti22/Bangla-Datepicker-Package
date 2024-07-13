@@ -21,5 +21,5 @@ jsBanglaDatepicker.container.addEventListener('getDate', (evt) => {
 ### To Install
 
 ```
-npm install js-bangla-calendar
+npm install js-bangla-datepicker
 ```
